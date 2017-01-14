@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Spring Boot Exemple</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div th:if="${not #lists.isEmpty(articles)}">
+        <h2>Product List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Text</th>
+            </tr>
+            <tr th:each="article : ${articles}">
+                <td th:text="${article.id}"><a href="/article/${article.id}">ID: </a></td>
+                <td th:text="${article.title}">Title</td>
+                <td th:text="${article.text}">Text</td>
+                <td><a th:href="${ '/article/' + article.id}">View</a></td>
+                <td><a th:href="${'/article/edit/' + article.id}">Edit</a></td>
+                <td><a th:href="${'/article/delete/' + article.id}">Delete</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
