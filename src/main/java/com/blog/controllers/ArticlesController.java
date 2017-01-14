@@ -2,6 +2,7 @@ package com.blog.controllers;
 
 import com.blog.models.Entities.Article;
 import com.blog.services.ArticleService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +14,7 @@ public class ArticlesController {
 
     private ArticleService articleService;
 
+    @Autowired
     public void setArticleService(ArticleService articleService) {
         this.articleService = articleService;
     }
