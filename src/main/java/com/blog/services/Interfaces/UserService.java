@@ -1,4 +1,4 @@
-package com.blog.services;
+package com.blog.services.Interfaces;
 
 import com.blog.models.Entities.User;
 import org.springframework.stereotype.Service;
@@ -10,5 +10,8 @@ public interface UserService {
 
     Iterable<User> getAllUsers();
 
-    void insertUsers(User user);
+    void insertUser(User user);
+
+    User getUserByEmail(String email);
+
 }

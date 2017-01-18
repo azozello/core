@@ -1,7 +1,8 @@
-package com.blog.services;
+package com.blog.services.Implementations;
 
 import com.blog.models.Entities.Article;
 import com.blog.repositories.ArticleRepository;
+import com.blog.services.Interfaces.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

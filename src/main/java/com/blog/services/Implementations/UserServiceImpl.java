@@ -1,7 +1,8 @@
-package com.blog.services;
+package com.blog.services.Implementations;
 
 import com.blog.models.Entities.User;
 import com.blog.repositories.UserRepository;
+import com.blog.services.Interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +27,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void insertUsers(User user) {
+    public User getUserByEmail(String email) {
+        Iterable<User> allUsers = userRepository.findAll();
+        for (User user : allUsers){
+            if (user.getEmail().equals(email)) return user;
+        }
+        return null;
+    }
+
+    @Override
+    public void insertUser(User user) {
         userRepository.save(user);
     }
 }

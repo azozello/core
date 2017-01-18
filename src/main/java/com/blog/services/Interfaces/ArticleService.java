@@ -1,4 +1,4 @@
-package com.blog.services;
+package com.blog.services.Interfaces;
 
 import com.blog.models.Entities.Article;
 import org.springframework.stereotype.Service;
